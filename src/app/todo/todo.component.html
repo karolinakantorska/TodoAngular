@@ -1,0 +1,30 @@
+<h1>hallo</h1>
+
+<mat-card>
+  <mat-card-header>
+  <mat-card-title>Offen</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role= "list">
+            <mat-list-item *ngFor="let todo of (items| todos: false) ">
+              <mat-checkbox [(ngModel)]="todo.checked" >
+                {{todo.description}}
+              </mat-checkbox>
+            </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Erledigt</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let todo of (items| todos: true) ">
+        <mat-checkbox [(ngModel)]="todo.checked">
+          {{todo.description}}
+        </mat-checkbox>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
